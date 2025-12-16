@@ -5,7 +5,8 @@
 ![Express.js](https://img.shields.io/badge/Express.js-v4.18-lightgrey.svg)
 ![MongoDB](https://img.shields.io/badge/MongoDB-v6.0-green.svg)
 
-![ShieldHub Homepage](public/images/screenshot.png)
+![ShieldHub Homepage](<img width="1532" height="896" alt="image" src="https://github.com/user-attachments/assets/c16f8f3d-d7f3-47c2-b929-4ea01285589c" />
+)
 
 **ShieldHub** is a comprehensive, all-in-one cybersecurity platform designed to empower users with essential tools for digital protection. From detecting phishing attempts to scanning vulnerabilities and educating users through curated articles, ShieldHub is your central command for staying safe online.
 
@@ -37,32 +38,26 @@
 
 ## 📦 Installation & Setup
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/shieldhub.git
-   cd shieldhub
-   ```
-
-2. **Install Dependencies**
+1. **Install Dependencies**
    ```bash
    npm install
    ```
 
-3. **Configure Environment**
+2. **Configure Environment**
    - Ensure MongoDB is running locally on port `27017`.
    - (Optional) Create a `.env` file for custom port or DB URI.
 
-4. **Seed Initial Data** (Optional)
+3. **Seed Initial Data** (Optional)
    ```bash
    npm run seed
    ```
 
-5. **Start the Server**
+4. **Start the Server**
    ```bash
    npm run dev
    ```
 
-6. **Access the Application**
+5. **Access the Application**
    - Open your browser and visit: `http://localhost:3000`
 
 ## 📂 Project Structure
