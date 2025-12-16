@@ -1,0 +1,70 @@
+<%- include('partials/header') %>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-search"></i> Search Results</h1>
+            <p>Results for: "<%= query %>"</p>
+        </div>
+    </section>
+
+    <section class="search-results-section">
+        <div class="container">
+            <% if (searchType) { %>
+                <div class="search-redirect">
+                    <p>Redirecting to: <strong>
+                            <%= searchType.replace('-', ' ' ) %>
+                        </strong></p>
+                    <a href="/<%= searchType %>" class="btn-primary">Go to <%= searchType.replace('-', ' ' ) %></a>
+                </div>
+                <% } %>
+
+                    <% if (results && results.length> 0) { %>
+                        <div class="articles-grid">
+                            <% results.forEach(article=> { %>
+                                <div class="article-card">
+                                    <% if (article.image) { %>
+                                        <div class="article-image">
+                                            <img src="<%= article.image %>" alt="<%= article.title %>">
+                                        </div>
+                                        <% } %>
+                                            <div class="article-content">
+                                                <h3>
+                                                    <%= article.title %>
+                                                </h3>
+                                                <p class="article-description">
+                                                    <%= article.description.substring(0, 150) %>
+                                                        <%= article.description.length> 150 ? '...' : '' %>
+                                                </p>
+                                                <div class="article-meta">
+                                                    <span class="article-date">
+                                                        <i class="fas fa-calendar"></i>
+                                                        <%= new Date(article.createdAt).toLocaleDateString() %>
+                                                    </span>
+                                                </div>
+                                                <a href="/articles/<%= article._id %>" class="btn-read-more">Read
+                                                    More</a>
+                                            </div>
+                                </div>
+                                <% }); %>
+                        </div>
+                        <% } else if (query && !searchType) { %>
+                            <div class="empty-state">
+                                <i class="fas fa-search"></i>
+                                <h3>No results found</h3>
+                                <p>Try searching for: "phishing detection", "vulnerability scanner", "password strength
+                                    checker", "steganography tool", or "cyber crime article"</p>
+                            </div>
+                            <% } %>
+        </div>
+    </section>
+
+    <% if (searchType) { %>
+        <script>
+            // Auto-redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = '/<%= searchType %>';
+            }, 2000);
+        </script>
+        <% } %>
+
+            <%- include('partials/footer') %>
