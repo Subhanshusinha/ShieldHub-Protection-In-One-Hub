@@ -1,115 +1,98 @@
-# ShieldHub - Cybersecurity Platform
+# 🛡️ ShieldHub - Ultimate Cybersecurity Protection Platform
 
-A comprehensive web application for cybersecurity tools, news, and resources built with Node.js, Express.js, MongoDB, and EJS.
+![License](https://img.shields.io/badge/license-ISC-blue.svg)
+![Node.js](https://img.shields.io/badge/Node.js-v18.0%2B-green.svg)
+![Express.js](https://img.shields.io/badge/Express.js-v4.18-lightgrey.svg)
+![MongoDB](https://img.shields.io/badge/MongoDB-v6.0-green.svg)
 
-## Features
+![ShieldHub Homepage](public/images/screenshot.png)
 
-1. **Phishing Detective** - Analyze suspicious emails and URLs to detect phishing attempts
-2. **Vulnerability Scanner** - Scan websites for potential security vulnerabilities
-3. **Password Strength Checker** - Check password strength and get security recommendations
-4. **Cybersecurity Articles** - Create, view, and manage cybersecurity articles with images, likes, and comments
+**ShieldHub** is a comprehensive, all-in-one cybersecurity platform designed to empower users with essential tools for digital protection. From detecting phishing attempts to scanning vulnerabilities and educating users through curated articles, ShieldHub is your central command for staying safe online.
 
-## Tech Stack
+## 🚀 Key Features
+
+### 🔍 Security Tools
+- **Phishing Detective**: Advanced analysis tool to detect suspicious emails and URLs.
+- **Vulnerability Scanner**: Scan websites to identify potential security loopholes and risks.
+- **Password Strength Checker**: Evaluate your password's resilience against brute-force attacks and get recommendations.
+- **Steganography Tool**: Securely hide secret messages inside ordinary images and reveal them later.
+
+### 📰 Knowledge Base
+- **Cybersecurity Articles**: Browsable library of articles to stay updated on the latest threats and protection strategies.
+- **Latest News Hub**: Real-time rotating news feed keeping you informed about the cyber world.
+- **Interactive Community**: Like and comment on articles to engage with the security community.
+
+### ⚙️ Admin Management
+- **Dashboard**: Centralized admin panel to manage content.
+- **News Manager**: Add, edit, and manage the "Latest News" ticker.
+- **Article Management**: Create and publish in-depth cybersecurity articles.
+
+## 🛠️ Tech Stack
 
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB (localhost)
-- **View Engine**: EJS
-- **File Upload**: Multer
-- **Styling**: Custom CSS
+- **Database**: MongoDB (Mongoose ODM)
+- **Frontend**: EJS (Embedded JavaScript), CSS3 (Custom Premium Styling)
+- **Authentication**: Custom session-based auth
+- **File Handling**: Multer for image uploads
 
-## Installation
+## 📦 Installation & Setup
 
-1. Install dependencies:
-```bash
-npm install
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/shieldhub.git
+   cd shieldhub
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment**
+   - Ensure MongoDB is running locally on port `27017`.
+   - (Optional) Create a `.env` file for custom port or DB URI.
+
+4. **Seed Initial Data** (Optional)
+   ```bash
+   npm run seed
+   ```
+
+5. **Start the Server**
+   ```bash
+   npm run dev
+   ```
+
+6. **Access the Application**
+   - Open your browser and visit: `http://localhost:3000`
+
+## 📂 Project Structure
+
+```
+shieldhub/
+├── models/             # Database Schemas (Articles, News, etc.)
+├── routes/             # API and Page Routes
+│   ├── admin.js        # Admin Dashboard Routes
+│   ├── articles.js     # Article Management
+│   └── api.js          # Tool APIs (Phishing, Scan, etc.)
+├── public/             # Static Assets (CSS, JS, Uploads)
+├── views/              # EJS Templates
+├── server.js           # Application Entry Point
+└── package.json        # Project Manifest
 ```
 
-2. Make sure MongoDB is running on localhost:27017
+## 🔌 API Reference
 
-3. Start the server:
-```bash
-npm start
-```
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/api/phishing/detect` | Analyze content for phishing indicators |
+| `POST` | `/api/vulnerability/scan` | Scan a target URL for vulnerabilities |
+| `POST` | `/api/password/check` | Rate password strength |
+| `GET` | `/articles` | Retrieve all cybersecurity articles |
 
-For development with auto-reload:
-```bash
-npm run dev
-```
+## 🤝 Contributing
 
-4. Open your browser and navigate to:
-```
-http://localhost:3000
-```
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
-## Project Structure
+## 📄 License
 
-```
-├── models/
-│   └── Article.js          # MongoDB article model
-├── routes/
-│   ├── articles.js         # Article routes
-│   └── api.js              # API endpoints
-├── views/
-│   ├── partials/
-│   │   ├── header.ejs     # Header partial
-│   │   └── footer.ejs      # Footer partial
-│   ├── index.ejs           # Home page
-│   ├── phishing-detective.ejs
-│   ├── vulnerability-scanner.ejs
-│   ├── password-strength.ejs
-│   ├── cybersecurity-article.ejs
-│   ├── article-detail.ejs
-│   ├── article-form.ejs
-│   ├── search-results.ejs
-│   └── about.ejs
-├── public/
-│   ├── css/
-│   │   └── style.css       # Main stylesheet
-│   ├── js/
-│   │   └── main.js         # Client-side JavaScript
-│   └── uploads/             # Uploaded images
-├── server.js                # Main server file
-└── package.json
-```
-
-## API Endpoints
-
-### Phishing Detection
-- `POST /api/phishing/detect` - Analyze email/URL for phishing
-
-### Vulnerability Scanner
-- `POST /api/vulnerability/scan` - Scan URL for vulnerabilities
-
-### Password Strength
-- `POST /api/password/check` - Check password strength
-
-### Articles
-- `GET /articles` - Get all articles
-- `GET /articles/new` - Create article form
-- `POST /articles` - Create new article
-- `GET /articles/:id` - Get article details
-- `POST /api/articles/:id/like` - Like an article
-- `POST /api/articles/:id/comment` - Add comment to article
-
-## Search Functionality
-
-The navbar search supports:
-- "phishing detection" → Redirects to Phishing Detective
-- "vulnerability scanner" → Redirects to Vulnerability Scanner
-- "password strength checker" → Redirects to Password Strength Checker
-- "cyber crime article" or "cybersecurity article" → Shows article search results
-
-## Database
-
-MongoDB database: `shieldhub`
-Collections:
-- `articles` - Stores article data with comments and likes
-
-## Notes
-
-- Images are stored in `public/uploads/` directory
-- Maximum file size: 5MB
-- Supported image formats: JPG, PNG, GIF, WEBP
-- All data is stored in localhost MongoDB
-
-
+This project is licensed under the ISC License.
