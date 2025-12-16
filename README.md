@@ -5,8 +5,8 @@
 ![Express.js](https://img.shields.io/badge/Express.js-v4.18-lightgrey.svg)
 ![MongoDB](https://img.shields.io/badge/MongoDB-v6.0-green.svg)
 
-![ShieldHub Homepage](<img width="1532" height="896" alt="image" src="https://github.com/user-attachments/assets/c16f8f3d-d7f3-47c2-b929-4ea01285589c" />
-)
+<img width="1532" height="896" alt="image" src="https://github.com/user-attachments/assets/4447dc82-6a72-4a2f-ac39-ca62a35f2116" />
+
 
 **ShieldHub** is a comprehensive, all-in-one cybersecurity platform designed to empower users with essential tools for digital protection. From detecting phishing attempts to scanning vulnerabilities and educating users through curated articles, ShieldHub is your central command for staying safe online.
 
